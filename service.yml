@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8sservice
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: phaseone-app
