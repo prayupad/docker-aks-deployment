@@ -4,16 +4,14 @@
 # https://aka.ms/yaml
 
 trigger:
-- main
+- none
 
 pool:
   vmImage: ubuntu-latest
 
-name: Docker-build-AKS-deploy
+name: Dockerbuild-AKSdeploy
 
 
-# Don't run against PRs
-pr: none
 
 variables:
   - name: repository
@@ -38,3 +36,28 @@ stages :
           repository: ${{ variables.repository }}
           Dockerfile: ${{ variables.dockerfile }}
           tags: latest
+
+
+  - stage: Deploy
+    displayName: Deploy AKS manifest
+    jobs:  
+    - job: Build
+      displayName: AKS Deployment manifest
+      steps:
+      - task: KubernetesManifest@0
+        inputs:
+          action: 'deploy'
+          kubernetesServiceConnection: 'aks'
+          manifests: 'deployment.yml'
+
+  - stage: Loadbalancerservice
+    displayName: Service Creation
+    jobs:
+    - job: Build
+      displayName: Service Creation
+      steps:
+      - task: KubernetesManifest@0
+        inputs:
+          action: 'deploy'
+          kubernetesServiceConnection: 'aks'
+          manifests: 'service.yml'
