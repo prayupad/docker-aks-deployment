@@ -41,7 +41,7 @@ stages :
         inputs:
           SourceFolder: 'manifests/'
           Contents: '*.yml'
-          TargetFolder: '$(Pipeline.Workspace)/manifests'
+          TargetFolder: 'manifests'
 
 
   - stage: Deploy
@@ -54,7 +54,7 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: '$(Build.SourcesDirectory)/deployment.yml'
+          manifests: 'deployment.yml'
 
   - stage: Loadbalancerservice
     displayName: Service Creation
@@ -66,4 +66,4 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: '$(Build.SourcesDirectory)/service.yml'
+          manifests: 'service.yml'
