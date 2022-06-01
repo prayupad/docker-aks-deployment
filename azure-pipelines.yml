@@ -45,7 +45,7 @@ stages :
       
       - task: PublishBuildArtifacts@1
         inputs:
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          PathtoPublish: '$(System.DefaultWorkingDirectory)/manifests'
           ArtifactName: 'drop'
           publishLocation: 'Container'
           StoreAsTar: true
