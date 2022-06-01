@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/latest
 kind: Deployment
 metadata:
   name: phaseone-app-deployment
@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: prayashiimage
-        image: epamacr.azurecr.io/webimage:v2
+        image: epamacr.azurecr.io/webimage:latest
         resources:
           limits:
             memory: "500Mi"
