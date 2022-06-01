@@ -41,7 +41,7 @@ stages :
         inputs:
           SourceFolder: 'manifests/'
           Contents: '*.yml'
-          TargetFolder: '$(Pipeline.Workspace)/manifests'
+          TargetFolder: '$(Build.ArtifactStagingDirectory)'
         
       - task: PublishBuildArtifacts@1
         inputs:
