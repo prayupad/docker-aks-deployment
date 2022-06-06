@@ -15,11 +15,11 @@ name: Dockerbuild-AKSdeploy
 
 variables:
   - name: repository
-    value: 'webimage'
+    value: 'app'
   - name: dockerfile
     value: '$(Build.SourcesDirectory)/Dockerfile'
   - name: containerRegistry
-    value: 'ACR'
+    value: 'acr'
 
 stages :
   - stage: Build
@@ -35,7 +35,7 @@ stages :
           command: buildAndPush
           repository: ${{ variables.repository }}
           Dockerfile: ${{ variables.dockerfile }}
-          tags: latest
+          tags: v1
 
       - task: CopyFiles@2
         inputs:

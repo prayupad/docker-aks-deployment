@@ -1,7 +1,7 @@
 apiVersion: latest
 kind: Service
 metadata:
-  name: k8sservice
+  name: phaseone-app
 spec:
   type: LoadBalancer
   ports:

@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: prayashiimage
-        image: epamacr.azurecr.io/webimage:v2
+        image: labacrpu.azurecr.io/app
         resources:
           limits:
             memory: "500Mi"
