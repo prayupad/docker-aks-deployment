@@ -5,7 +5,7 @@
 name: Docker-AKSDeployment-updated
 
 trigger:
-- none
+- main
 
 pool:
   vmImage: ubuntu-latest
