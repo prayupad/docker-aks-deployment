@@ -5,7 +5,7 @@
 name: Docker-AKSDeployment-updated
 
 trigger:
-- main
+- none
 
 pool:
   vmImage: ubuntu-latest
@@ -19,7 +19,6 @@ variables:
   containerRegistry: 'labacrpu.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'devopsmelacr132827a7-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
