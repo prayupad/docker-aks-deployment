@@ -36,8 +36,13 @@ stages :
           repository: ${{ variables.repository }}
           Dockerfile: ${{ variables.dockerfile }}
           tags: v1
-
-
+      
+      - task: CopyFiles@2
+        inputs:
+          SourceFolder: '$(Build.SourcesDirectory)'
+          Contents: '**'
+          TargetFolder: '$(Pipeline.Workspace)/manifests/'
+      
   - stage: Deploy
     displayName: Deploy AKS manifest
     jobs:  
