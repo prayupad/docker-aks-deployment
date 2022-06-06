@@ -37,12 +37,6 @@ stages :
           Dockerfile: ${{ variables.dockerfile }}
           tags: v1
 
-      - task: CopyFiles@2
-        inputs:
-          SourceFolder: 'manifests/'
-          Contents: '*.yml'
-          TargetFolder: 'manifests'
-
 
   - stage: Deploy
     displayName: Deploy AKS manifest
@@ -54,7 +48,7 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: 'deployment.yml'
+          manifests: '/manifests/deployment.yml'
 
   - stage: Loadbalancerservice
     displayName: Service Creation
@@ -66,4 +60,4 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: 'service.yml'
+          manifests: '/manifests/service.yml'
