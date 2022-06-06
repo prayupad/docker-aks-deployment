@@ -1,10 +1,10 @@
 apiVersion: latest
 kind: Service
 metadata:
-  name: phaseone-app
+  name: phaseoneapp
 spec:
   type: LoadBalancer
   ports:
   - port: 80
   selector:
-    app: phaseone-app
+    app: phaseoneapp
