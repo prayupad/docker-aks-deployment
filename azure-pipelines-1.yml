@@ -48,7 +48,7 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: '/manifests/deployment.yml'
+          manifests: '$(Pipeline.Workspace)/manifests/deployment.yml'
 
   - stage: Loadbalancerservice
     displayName: Service Creation
@@ -60,4 +60,4 @@ stages :
         inputs:
           action: 'deploy'
           kubernetesServiceConnection: 'aks'
-          manifests: '/manifests/service.yml'
+          manifests: '$(Pipeline.Workspace)/manifests/service.yml'
