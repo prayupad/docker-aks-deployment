@@ -41,7 +41,7 @@ stages :
         inputs:
           SourceFolder: '$(Build.SourcesDirectory)'
           Contents: '**'
-          TargetFolder: '$(Pipeline.Workspace)/manifests/'
+          TargetFolder: '$(Pipeline.Workspace)/1/manifests/'
       
   - stage: Deploy
     displayName: Deploy AKS manifest
