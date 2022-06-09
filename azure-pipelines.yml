@@ -63,7 +63,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'aksenv.default'
+    environment: 'aksclusterdev.default'
     strategy:
       runOnce:
         deploy:
