@@ -76,6 +76,7 @@ stages:
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
+                $(Pipeline.Workspace)/manifests/phaseoneapp-ingress.yml
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
