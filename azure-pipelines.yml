@@ -16,7 +16,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'acr'
   imageRepository: 'webapp'
-  containerRegistry: 'labacrpu.azurecr.io'
+  containerRegistry: 'demoprayashi.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
 
