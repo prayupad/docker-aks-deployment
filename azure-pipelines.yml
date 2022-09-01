@@ -63,7 +63,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-      environment: 'aks.default'
+    environment: 'aks.default'
     strategy:
       runOnce:
         deploy:
