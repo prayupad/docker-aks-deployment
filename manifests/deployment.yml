@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: labacrpu.azurecr.io/webapp
+        image: demoprayashi.azurecr.io/webapp
         resources:
           limits:
             memory: "500Mi"
